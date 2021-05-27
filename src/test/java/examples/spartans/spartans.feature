@@ -21,3 +21,16 @@ Feature: Spartans App Feature testing
       Given path '/api/spartans' , 10
       When method GET
       Then status 200
+      # check the content type header as it did in example above
+      Then match header  Content-Type == 'application/json'
+      Then print 'Karate is awesome so far , hi ha!'
+      Then print 'Karate printing' + 'Concatenating with plus '
+      Then print 'Karate printing' , 'Concatenating with comma '
+      Then print response
+      #  accessing the fields of json object
+      Then print 'ID of this Spartan' , response.id
+      Then print 'Gender of this Spartan' , response.gender
+      Then print 'Name of this Spartan' , response.name
+      Then print 'Phone of this Spartan' , response.phone
+
+
