@@ -40,3 +40,33 @@ Feature: Spartan Crud Operation feature
         When method POST
         Then status 201
         And print response
+        # Do your validation here for response fields for your POST Request
+        ## TODO at home
+
+        # Now continue to send Get request using same id generate above
+        * def newId = response.data.id
+        Given path '/api/spartans', newId
+        When method GET
+        Then status 200
+
+        # Update same data with different body using PUT
+        * def newPayload =
+              """
+                  {
+                      "name": "New-Mustafa",
+                      "gender": "Male",
+                      "phone": 1234567888
+                  }
+              """
+        Given path '/api/spartans', newId
+        And request newPayload
+        When method PUT
+        Then status 204
+
+        # Delete request using same ID
+        Given path '/api/spartans', newId
+        When method DELETE
+        Then status 204
+
+
+
