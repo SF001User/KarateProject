@@ -32,5 +32,23 @@ Feature: Spartans App Feature testing
       Then print 'Gender of this Spartan' , response.gender
       Then print 'Name of this Spartan' , response.name
       Then print 'Phone of this Spartan' , response.phone
+      # verify field values
+      Then match response.id == 10
+      Then match response.name == 'Lorenza'
+      Then match response.gender == 'Female'
+      Then match response.phone == 3312820936
+
+
+      Scenario: Search spartan using query param and check status code
+        # Send GET /api/spartans/search?nameContains='a'&gender='Female'
+        Given path '/api/spartans/search'
+        # Providing query parameters using param keyword
+        And param nameContains = 'a'
+        And param gender = 'Female'
+        When method GET
+        Then status 200
+
+
+
 
 
