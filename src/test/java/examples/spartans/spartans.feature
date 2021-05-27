@@ -49,6 +49,12 @@ Feature: Spartans App Feature testing
         Then status 200
 
 
+      Scenario: Getting XML result from /api/spartans
+        Given path '/api/spartans'
+        And header Accept = 'application/xml'
+        When method GET
+        Then status 200
+        And match header Content-Type == 'application/xml'
 
 
 
