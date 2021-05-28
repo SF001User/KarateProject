@@ -13,6 +13,8 @@ Feature: User should be able to login
     And form field password = 'KNPXrm3S'
     When method POST
     Then status 200
-    And print response.token
+#    And print response.token
+    # saving into variable so it can be directly accessible for whoever is calling this feature file
+    * def topSecretToken = response.token
 
 
