@@ -8,9 +8,10 @@ function fn() {
   var config = {
     env: env,
     batchName: 'Batch 21',
-    library_url : 'https://library1.cybertekschool.com/rest/v1'
+    library_url : 'https://library1.cybertekschool.com/rest/v1',
+    librarian_username : 'librarian69@library',
+    librarian_password : 'KNPXrm3S'
   }
-
 
   if (env == 'dev') {
     // customize

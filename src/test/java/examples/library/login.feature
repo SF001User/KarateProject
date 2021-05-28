@@ -5,12 +5,12 @@ Feature: User should be able to login
 
   Scenario: Logging in as valid librarian user
 
-    Given url 'https://library1.cybertekschool.com/rest/v1'
+    Given url library_url
     And   path 'login'
     # And  header Content-Type = 'application/x-www-form-urlencoded'
     # form field keyword is used for providing x-www-form-urlencoded form data
-    And form field email = 'librarian69@library'
-    And form field password = 'KNPXrm3S'
+    And form field email = librarian_username
+    And form field password = librarian_password
     When method POST
     Then status 200
 #    And print response.token
