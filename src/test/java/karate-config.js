@@ -13,11 +13,18 @@ function fn() {
     librarian_password : 'KNPXrm3S'
   }
 
-  if (env == 'dev') {
+  if (env == 'library2') {
     // customize
     // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    config.library_url = 'https://library2.cybertekschool.com/rest/v1'
+    config.librarian_username = 'librarian570@library'
+    config.librarian_password = '2gCucjjn'
+
+
+  } else if (env == 'library3') {
+    config.library_url = 'https://library3.cybertekschool.com/rest/v1'
+    config.librarian_username = 'librarian11@library'
+    config.librarian_password = 'shpUFwRF'
   }
   return config;
 }
