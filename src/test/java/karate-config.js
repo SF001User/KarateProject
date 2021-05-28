@@ -4,10 +4,14 @@ function fn() {
   if (!env) {
     env = 'dev';
   }
+  // This section is for declaring global variables that accessible anywhere
   var config = {
     env: env,
-    myVarName: 'someValue'
+    batchName: 'Batch 21',
+    library_url : 'https://library1.cybertekschool.com/rest/v1'
   }
+
+
   if (env == 'dev') {
     // customize
     // e.g. config.foo = 'bar';
